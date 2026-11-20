@@ -35,14 +35,26 @@ SillyTavern 只有一个「Custom Endpoint」输入框。渠道一多，每次�
 
 ## 安装
 
-### 方式一：git clone（推荐）
+### 方式一：酒馆内直接安装（推荐）
+
+打开 SillyTavern → **扩展** → **安装扩展程序**，在「输入扩展程序的 Git URL 以安装」里填：
+
+```text
+https://github.com/Troye13122/sillytavern-endpoint-manager
+```
+
+「分支或标签」留空即可（也可以填 `v1.0.0`），然后点 **只给我安装** 或 **给所有人安装**。
+
+安装完成后刷新页面（建议 `Ctrl+F5`）。
+
+### 方式二：git clone
 
 ```bash
 cd SillyTavern/public/scripts/extensions/third-party
 git clone https://github.com/Troye13122/sillytavern-endpoint-manager.git
 ```
 
-### 方式二：下载 ZIP
+### 方式三：下载 ZIP
 
 下载仓库 ZIP，解压到：
 
