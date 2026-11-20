@@ -24,7 +24,7 @@ SillyTavern 只有一个「Custom Endpoint」输入框。渠道一多，每次�
 
 ## 功能
 
-- **多 URL 收藏**：每个端点自定义名称，例如「北棱改文站」「casino」「公司中转」。
+- **多 URL 收藏**：每个端点自定义名称。
 - **URL ↔ Key 绑定**：每个端点独立维护 key 列表。
 - **一个 URL 多把 Key**：同一端点下可保存任意多把，随时切换。
 - **快捷下拉**：在「Custom Endpoint」和「Custom API Key」下方直接切换。
