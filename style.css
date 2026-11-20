@@ -1,0 +1,427 @@
+/* 端点收藏夹 · 内联与弹窗样式（尽量跟随酒馆主题变量） */
+
+#cem-url-bar,
+#cem-key-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 6px 0 2px;
+}
+
+#cem-profile-select,
+#cem-key-select {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 30px;
+}
+
+.cem-icon-btn {
+    flex: 0 0 auto;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* ST 的 menu_button 在不同主题里可能是 width:100%；这里统一成按内容宽度 */
+.cem-bar .menu_button,
+.cem-dialog .menu_button,
+.cem-key-actions .menu_button,
+.cem-editor-actions .menu_button,
+.cem-section-actions .menu_button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    min-width: 0;
+    white-space: nowrap;
+    flex: 0 0 auto;
+}
+
+.cem-bar .cem-icon-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+}
+
+.cem-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* 弹窗                                                               */
+/* ------------------------------------------------------------------ */
+
+.cem-dialog {
+    width: min(880px, 94vw);
+    max-height: 86vh;
+    padding: 0;
+    border: 1px solid var(--SmartThemeBorderColor, #555);
+    border-radius: 12px;
+    background: var(--SmartThemeBlurTintColor, #1e1e1e);
+    color: var(--SmartThemeBodyColor, #ddd);
+    overflow: hidden;
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.45);
+}
+
+.cem-dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.cem-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(2px);
+}
+
+.cem-dialog-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #444);
+    flex: 0 0 auto;
+    flex-wrap: wrap;
+}
+
+.cem-dialog-title {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.cem-dialog-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.cem-dialog-body {
+    display: flex;
+    min-height: 420px;
+    max-height: calc(86vh - 58px);
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+.cem-side {
+    width: 285px;
+    flex: 0 0 auto;
+    padding: 12px;
+    border-right: 1px solid var(--SmartThemeBorderColor, #444);
+    overflow: auto;
+}
+
+.cem-side > input {
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.cem-profile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cem-profile-item {
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: background 0.12s ease, border-color 0.12s ease;
+}
+
+.cem-profile-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.cem-profile-item.is-selected {
+    border-color: var(--SmartThemeQuoteColor, #7aa2f7);
+    background: rgba(122, 162, 247, 0.12);
+}
+
+.cem-profile-name {
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.cem-profile-url {
+    margin-top: 2px;
+    font-size: 12px;
+    opacity: 0.7;
+    word-break: break-all;
+}
+
+.cem-profile-meta {
+    margin-top: 3px;
+    font-size: 11px;
+    opacity: 0.6;
+}
+
+.cem-editor {
+    flex: 1 1 auto;
+    padding: 16px;
+    overflow: auto;
+}
+
+.cem-empty {
+    padding: 18px 12px;
+    opacity: 0.6;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.cem-empty.cem-small {
+    padding: 10px 0;
+    text-align: left;
+}
+
+.cem-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.cem-field {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.cem-field > span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.cem-field > input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cem-section {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid var(--SmartThemeBorderColor, #444);
+}
+
+.cem-section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.cem-section-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.cem-key-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.cem-key-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--SmartThemeBorderColor, #3a3a3a);
+    flex-wrap: wrap;
+}
+
+.cem-key-main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex-wrap: wrap;
+}
+
+.cem-key-label {
+    font-weight: 600;
+}
+
+.cem-key-masked {
+    font-family: var(--monoFontFamily, Consolas, monospace);
+    font-size: 12px;
+    opacity: 0.72;
+    word-break: break-all;
+}
+
+.cem-badge {
+    font-size: 10px;
+    line-height: 1.4;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--SmartThemeQuoteColor, #7aa2f7);
+    color: #111;
+    white-space: nowrap;
+}
+
+.cem-badge-dim {
+    background: rgba(255, 255, 255, 0.16);
+    color: inherit;
+}
+
+.cem-key-actions {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.cem-key-actions .menu_button,
+.cem-section-actions .menu_button {
+    font-size: 12px;
+    padding: 3px 9px;
+}
+
+.cem-editor-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.cem-danger {
+    color: #ff7373;
+    border-color: rgba(255, 115, 115, 0.45);
+}
+
+.cem-editor-hint,
+.cem-drawer-hint {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.55;
+    opacity: 0.55;
+}
+
+/* ------------------------------------------------------------------ */
+/* 小弹窗                                                             */
+/* ------------------------------------------------------------------ */
+
+.cem-small-dialog {
+    width: min(470px, 92vw);
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.cem-small-dialog[open] {
+    display: block;
+}
+
+.cem-small-dialog .cem-dialog-title {
+    margin-bottom: 10px;
+}
+
+.cem-new-body {
+    display: flex;
+    flex-direction: column;
+}
+
+#cem-new-bind-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 2px 0 12px;
+}
+
+.cem-key-dialog-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cem-dialog-actions-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.cem-import-list {
+    max-height: 52vh;
+    overflow: auto;
+    margin: 10px 0;
+}
+
+.cem-import-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 4px;
+    border-bottom: 1px solid var(--SmartThemeBorderColor, #3a3a3a);
+    cursor: pointer;
+}
+
+.cem-import-label {
+    font-weight: 600;
+    word-break: break-word;
+}
+
+.cem-import-masked {
+    margin-left: auto;
+    font-family: var(--monoFontFamily, Consolas, monospace);
+    font-size: 12px;
+    opacity: 0.7;
+    word-break: break-all;
+}
+
+/* ------------------------------------------------------------------ */
+/* 设置抽屉                                                           */
+/* ------------------------------------------------------------------ */
+
+.cem-drawer-desc {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+#cem-open-manager-drawer {
+    display: inline-flex;
+    margin-top: 8px;
+}
+
+/* ------------------------------------------------------------------ */
+/* 窄屏                                                               */
+/* ------------------------------------------------------------------ */
+
+@media (max-width: 760px) {
+    .cem-dialog {
+        width: 96vw;
+    }
+
+    .cem-dialog-body {
+        flex-direction: column;
+        min-height: 0;
+        max-height: calc(86vh - 58px);
+    }
+
+    .cem-side {
+        width: auto;
+        max-height: 170px;
+        border-right: none;
+        border-bottom: 1px solid var(--SmartThemeBorderColor, #444);
+    }
+
+    .cem-editor {
+        padding: 12px;
+    }
+
+    .cem-key-row {
+        align-items: flex-start;
+    }
+}

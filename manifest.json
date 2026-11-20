@@ -1,0 +1,13 @@
+{
+    "name": "Custom Endpoint Manager",
+    "display_name": "端点收藏夹",
+    "version": "1.0.0",
+    "author": "Troye",
+    "description": "多 URL + 多 Key 管理：自定义名称、URL 与 Key 绑定、一键切换，并在自定义端点输入框旁提供快捷下拉。",
+    "minSillyTavernVersion": "1.12.0",
+    "requires": [],
+    "loading_order": 100,
+    "js": "index.js",
+    "css": "style.css",
+    "styles": ["style.css"]
+}
